@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing URL Detector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">🛡️ PhishGuard</div>
+    <span class="tagline">Phishing URL Detector</span>
+</nav>
+
+<div class="container">
+
+    <div class="hero">
+        <h1>Is this URL Safe?</h1>
+        <p>Paste any URL below to check if it is a phishing link</p>
+    </div>
+
+    <div class="scan-box">
+        <div class="input-group">
+            <span class="url-icon">🔗</span>
+            <input
+                type="text"
+                id="urlInput"
+                placeholder="Enter URL e.g. https://example.com"
+                onkeypress="handleKey(event)"
+            />
+            <button id="scanBtn" onclick="scanURL()">
+                Scan URL
+            </button>
+        </div>
+    </div>
+
+    <!-- Loading -->
+    <div id="loading" class="loading" style="display:none">
+        <div class="spinner"></div>
+        <p>Analyzing URL...</p>
+    </div>
+
+    <!-- Result -->
+    <div id="result" style="display:none"></div>
+
+    <!-- Examples -->
+    <div class="examples">
+        <p>Try an example:</p>
+        <button onclick="setURL('https://www.google.com')">
+            google.com
+        </button>
+        <button onclick="setURL('http://secure-login-verify.xyz/bank')">
+            suspicious-url
+        </button>
+        <button onclick="setURL('https://www.github.com')">
+            github.com
+        </button>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
